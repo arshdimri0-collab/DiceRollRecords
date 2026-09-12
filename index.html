@@ -1,5 +1,4 @@
-
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -47,22 +46,23 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 10px 16px 10px;
+            padding: 10px 10px 16px 10px;
             background: #ffffff;
             position: relative;
+            overflow: hidden; /* Prevents anything from overflowing the box */
         }
 
         .curved-svg {
             width: 100%;
-            height: 75px;
-            overflow: visible;
+            height: 65px;
+            margin-top: 4px;
         }
 
         .curved-text {
             font-family: "Times New Roman", Times, serif;
-            font-size: 21px;
+            font-size: 19px;
             font-weight: bold;
-            letter-spacing: 3px;
+            letter-spacing: 2.5px;
             fill: var(--accent-red);
             text-anchor: middle;
         }
@@ -172,10 +172,10 @@
 
     <div class="container">
         
-        <!-- Dice Roll Logo with Curved Text -->
+        <!-- Dice Roll Logo with Fixed Curved Text -->
         <div class="logo-box">
-            <svg class="curved-svg" viewBox="0 0 200 80">
-                <path id="text-curve" d="M 20,70 A 80,80 0 0,1 180,70" fill="transparent" />
+            <svg class="curved-svg" viewBox="0 0 200 60">
+                <path id="text-curve" d="M 15,55 A 85,85 0 0,1 185,55" fill="transparent" />
                 <text class="curved-text">
                     <textPath href="#text-curve" startOffset="50%">
                         DICE ROLL
@@ -223,3 +223,4 @@
 
 </body>
 </html>
+
