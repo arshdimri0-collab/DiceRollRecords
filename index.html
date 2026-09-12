@@ -36,7 +36,7 @@
             text-align: center;
         }
 
-        /* Recreated Pure HTML/CSS Original Logo (Clean & Responsive) */
+        /* Logo Component */
         .logo-box {
             width: 180px;
             height: 180px;
@@ -46,30 +46,31 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 10px 16px 10px;
+            padding: 10px 10px 14px 10px;
             background: #ffffff;
             position: relative;
             cursor: pointer;
+            user-select: none;
         }
 
         .curved-svg {
             width: 100%;
-            height: 60px;
+            height: 55px;
             overflow: visible;
         }
 
         .curved-text {
             font-family: "Times New Roman", Times, serif;
-            font-size: 20px;
+            font-size: 19px;
             font-weight: bold;
-            letter-spacing: 2.5px;
+            letter-spacing: 2px;
             fill: var(--accent-red);
             text-anchor: middle;
         }
 
         .logo-dot {
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             background-color: var(--accent-red);
             border-radius: 50%;
             position: absolute;
@@ -95,7 +96,7 @@
             text-transform: uppercase;
         }
 
-        /* Navigation Views */
+        /* Views */
         .page-view {
             display: none;
         }
@@ -115,20 +116,28 @@
             padding-bottom: 8px;
         }
 
-        /* Artist Card / Button */
+        /* Artist Card */
         .artist-card {
             border: 2px solid var(--border-color);
-            padding: 20px;
+            padding: 16px;
             background: #ffffff;
             margin-bottom: 24px;
             text-align: center;
             cursor: pointer;
-            transition: transform 0.15s ease, background-color 0.15s ease;
+            transition: border-color 0.2s ease;
         }
 
         .artist-card:hover {
-            background-color: #111111;
-            color: #ffffff;
+            border-color: var(--accent-red);
+        }
+
+        .artist-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+            margin-bottom: 14px;
+            background-color: #f0f0f0;
         }
 
         .artist-name {
@@ -141,8 +150,9 @@
         .artist-sub {
             font-size: 12px;
             letter-spacing: 1px;
-            margin-top: 4px;
-            opacity: 0.8;
+            margin-top: 6px;
+            color: var(--accent-red);
+            font-weight: 700;
             text-transform: uppercase;
         }
 
@@ -158,8 +168,9 @@
             text-decoration: none;
             cursor: pointer;
             border: 1px solid var(--border-color);
-            padding: 6px 12px;
+            padding: 6px 14px;
             background: #ffffff;
+            transition: all 0.2s ease;
         }
 
         .back-btn:hover {
@@ -167,13 +178,22 @@
             color: #ffffff;
         }
 
-        /* Release Cards */
+        /* Release Cards & Artwork */
         .release-card {
             border: 2px solid var(--border-color);
-            padding: 24px;
+            padding: 20px;
             background: #ffffff;
             margin-bottom: 24px;
             text-align: left;
+        }
+
+        .cover-art {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+            margin-bottom: 16px;
+            background-color: #f0f0f0;
         }
 
         .release-tag {
@@ -182,7 +202,7 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--accent-red);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .release-title {
@@ -246,8 +266,8 @@
         
         <!-- Dice Roll Logo -->
         <div class="logo-box" onclick="showPage('artists-page')">
-            <svg class="curved-svg" viewBox="0 0 200 60">
-                <path id="text-curve" d="M 15,55 A 85,85 0 0,1 185,55" fill="transparent" />
+            <svg class="curved-svg" viewBox="0 0 200 65">
+                <path id="text-curve" d="M 20,55 A 80,80 0 0,1 180,55" fill="transparent" />
                 <text class="curved-text">
                     <textPath href="#text-curve" startOffset="50%">
                         DICE ROLL
@@ -266,6 +286,7 @@
             <div class="section-title">Roster / Artists</div>
             
             <div class="artist-card" onclick="showPage('arsh-dimri-page')">
+                <img src="artist.jpg" alt="Arsh Dimri" class="artist-img">
                 <div class="artist-name">Arsh Dimri</div>
                 <div class="artist-sub">View Catalog &rarr;</div>
             </div>
@@ -281,6 +302,7 @@
 
             <!-- Release 01 -->
             <div class="release-card">
+                <img src="boys-like-you.jpg" alt="Boys Like You Artwork" class="cover-art">
                 <div class="release-tag">CATALOG #001</div>
                 <h2 class="release-title">Boys Like You</h2>
                 <div class="release-artist">by Arsh Dimri</div>
@@ -293,6 +315,7 @@
 
             <!-- Release 02 -->
             <div class="release-card">
+                <img src="improper-codings.jpg" alt="Improper Codings Artwork" class="cover-art">
                 <div class="release-tag">CATALOG #002</div>
                 <h2 class="release-title">Improper Codings</h2>
                 <div class="release-artist">by Arsh Dimri</div>
