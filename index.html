@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+
+            <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Roll Records</title>
     <style>
-        /* Base Styles & Retro Color Palette */
         :root {
             --bg-color: #fcfcfc;
             --text-color: #111111;
@@ -31,51 +31,60 @@
             padding: 40px 20px;
         }
 
-        /* Container */
         .container {
             max-width: 500px;
             width: 100%;
             text-align: center;
         }
 
-        /* Logo Component (Recreated in Pure HTML/CSS) */
+        /* Logo Component */
         .logo-box {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border: 4px solid var(--border-color);
-            margin: 0 auto 24px auto;
+            margin: 0 auto 20px auto;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 10px;
+            padding: 12px 10px 16px 10px;
             background: #ffffff;
             position: relative;
         }
 
-        .logo-title {
-            font-family: "Times New Roman", Times, serif;
-            font-size: 20px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: var(--accent-red);
-            text-transform: uppercase;
+        .curved-svg {
+            width: 100%;
+            height: 75px;
+            overflow: visible;
         }
 
-        /* The iconic 1-pip / Japanese flag red dot */
+        .curved-text {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            fill: var(--accent-red);
+            text-anchor: middle;
+        }
+
         .logo-dot {
-            width: 52px;
-            height: 52px;
+            width: 54px;
+            height: 54px;
             background-color: var(--accent-red);
             border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .logo-sub {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 800;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--text-color);
+            z-index: 2;
         }
 
         .estd {
@@ -86,12 +95,12 @@
             text-transform: uppercase;
         }
 
-        /* Main Content & Release Card */
+        /* Release Cards */
         .release-card {
             border: 2px solid var(--border-color);
             padding: 24px;
             background: #ffffff;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             text-align: left;
         }
 
@@ -105,30 +114,17 @@
         }
 
         .release-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
             text-transform: uppercase;
         }
 
-        .release-meta {
+        .release-artist {
             font-size: 14px;
+            font-weight: 600;
             color: #555;
             margin-bottom: 16px;
-        }
-
-        .tracklist {
-            list-style: none;
-            border-top: 1px solid #eee;
-            padding-top: 12px;
-            margin-bottom: 20px;
-        }
-
-        .tracklist li {
-            font-size: 14px;
-            padding: 4px 0;
-            display: flex;
-            justify-content: space-between;
         }
 
         /* Buttons & Links */
@@ -176,34 +172,48 @@
 
     <div class="container">
         
-        <!-- Dice Roll Logo -->
+        <!-- Dice Roll Logo with Curved Text -->
         <div class="logo-box">
-            <div class="logo-title">DICE ROLL</div>
+            <svg class="curved-svg" viewBox="0 0 200 80">
+                <path id="text-curve" d="M 20,70 A 80,80 0 0,1 180,70" fill="transparent" />
+                <text class="curved-text">
+                    <textPath href="#text-curve" startOffset="50%">
+                        DICE ROLL
+                    </textPath>
+                </text>
+            </svg>
+            
             <div class="logo-dot"></div>
             <div class="logo-sub">RECORDS.</div>
         </div>
+        
         <div class="estd">ESTD. 2026</div>
 
-        <!-- Featured Release Card -->
+        <!-- Release 01 -->
         <div class="release-card">
             <div class="release-tag">CATALOG #001</div>
-            <h2 class="release-title">NEON — EP</h2>
-            <div class="release-meta">3-Track Original EP</div>
-            
-            <ul class="tracklist">
-                <li><span>01. Going Nowhere</span> </li>
-                <li><span>02. Kaleidoscope of Colours</span> </li>
-                <li><span>03. Smash My Head Through the Stars</span> </li>
-            </ul>
+            <h2 class="release-title">Boys Like You</h2>
+            <div class="release-artist">by Arsh Dimri</div>
 
             <div class="btn-group">
-                <a href="#" class="btn" target="_blank">Listen on Spotify</a>
-                <a href="#" class="btn" target="_blank">Listen on Apple Music</a>
-                <a href="#" class="btn" target="_blank">Bandcamp / Stream</a>
+                <a href="https://spotify.com" class="btn" target="_blank">Listen on Spotify</a>
+                <a href="https://apple.com" class="btn" target="_blank">Listen on Apple Music</a>
             </div>
         </div>
 
-        <!-- Links Footer -->
+        <!-- Release 02 -->
+        <div class="release-card">
+            <div class="release-tag">CATALOG #002</div>
+            <h2 class="release-title">Improper Codings</h2>
+            <div class="release-artist">by Arsh Dimri</div>
+
+            <div class="btn-group">
+                <a href="https://spotify.com" class="btn" target="_blank">Listen on Spotify</a>
+                <a href="https://apple.com" class="btn" target="_blank">Listen on Apple Music</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
         <footer>
             <p>℗ 2026 Dice Roll. All rights reserved.</p>
             <p style="margin-top: 8px;">Contact: <a href="mailto:contact@diceroll.com">contact@diceroll.com</a></p>
