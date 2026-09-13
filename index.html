@@ -244,6 +244,30 @@
             margin-bottom: 14px;
         }
 
+        /* Editorial Images & Captions */
+        .article-image-figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .editorial-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+            background-color: #f0f0f0;
+            display: block;
+        }
+
+        .image-caption {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #666666;
+            margin-top: 8px;
+            text-transform: uppercase;
+        }
+
         /* Artist Card */
         .artist-card {
             border: 2px solid var(--border-color);
@@ -439,7 +463,7 @@
                 </div>
             </article>
 
-            <!-- TYPE 2: DEDICATED ARTICLE PAGE (Music Reviews, Features & Deep Dives) -->
+            <!-- TYPE 2: DEDICATED ARTICLE PAGE WITH IMAGES (Music Reviews, Features & Deep Dives) -->
             <article class="article-card clickable" onclick="showPage('review-boys-like-you-page')">
                 <div class="article-meta">
                     <span>[ Music Review ]</span>
@@ -454,7 +478,7 @@
 
         </div>
 
-        <!-- DEDICATED PAGE: MUSIC REVIEW -->
+        <!-- DEDICATED PAGE: MUSIC REVIEW WITH PICTURES -->
         <div id="review-boys-like-you-page" class="page-view">
             <div style="text-align: left;">
                 <span class="back-btn" onclick="showPage('notice-page', 'tab-notice')">&larr; Back to Press</span>
@@ -466,9 +490,24 @@
                     <span class="article-date">SEPT 2026</span>
                 </div>
                 <h1 class="full-article-headline">Single Review: Arsh Dimri — "Boys Like You"</h1>
+                
                 <div class="full-article-content">
                     <p><em>Boys Like You</em> stands out as a compelling statement from Arsh Dimri. Blending raw, introspective lyricism with precise production, the track captures a distinct mood of self-reflection and retro warmth.</p>
+                    
+                    <!-- EDITORIAL IMAGE BLOCK 1 -->
+                    <figure class="article-image-figure">
+                        <img src="boys-like-you-review.jpg" alt="Arsh Dimri Studio Session" class="editorial-img">
+                        <figcaption class="image-caption">Fig 1. Studio sessions during the tracking of "Boys Like You".</figcaption>
+                    </figure>
+
                     <p>The instrumentation leans heavily into classic dynamic contrasts—letting atmospheric textures breathe before introducing driven drum patterns. Dimri’s vocal performance maintains an authentic clarity throughout, anchoring the record's emotional weight.</p>
+                    
+                    <!-- EDITORIAL IMAGE BLOCK 2 -->
+                    <figure class="article-image-figure">
+                        <img src="boys-like-you-art-process.jpg" alt="Single Artwork Process" class="editorial-img">
+                        <figcaption class="image-caption">Fig 2. Visual development and original analogue sleeve design.</figcaption>
+                    </figure>
+
                     <p>As catalog release #001 for Dice Roll Records, it sets an ambitious standard for what the label aims to represent in independent music.</p>
                 </div>
             </article>
