@@ -137,15 +137,18 @@
             padding-bottom: 6px;
         }
 
-        /* Press Article Card Styling */
+        /* Base Card Styling */
         .article-card {
             border: 2px solid var(--border-color);
             padding: 22px;
             background: #ffffff;
             margin-bottom: 24px;
             text-align: left;
-            cursor: pointer;
             transition: border-color 0.2s ease;
+        }
+
+        .article-card.clickable {
+            cursor: pointer;
         }
 
         .article-card:hover {
@@ -196,7 +199,8 @@
             display: inline-block;
         }
 
-        .article-body {
+        /* Inline Expandable Body (Press Release Bulletins) */
+        .article-body-inline {
             display: none;
             font-size: 13px;
             line-height: 1.6;
@@ -206,12 +210,38 @@
             margin-top: 14px;
         }
 
-        .article-card.open .article-body {
+        .article-card.open .article-body-inline {
             display: block;
         }
 
-        .article-card.open .read-more-btn {
+        /* Dedicated Full Article Page Styling */
+        .full-article-container {
+            border: 2px solid var(--border-color);
+            padding: 26px;
+            background: #ffffff;
+            margin-bottom: 24px;
+        }
+
+        .full-article-headline {
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.25;
+            margin: 12px 0 16px 0;
             color: var(--text-color);
+        }
+
+        .full-article-content {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #222222;
+            border-top: 1px dashed #ccc;
+            padding-top: 18px;
+        }
+
+        .full-article-content p {
+            margin-bottom: 14px;
         }
 
         /* Artist Card */
@@ -389,42 +419,59 @@
             </div>
         </div>
 
-        <!-- TAB 2: PRESS & NOTICE BOARD (EXPANDABLE ARTICLES) -->
+        <!-- TAB 2: PRESS & NOTICE BOARD -->
         <div id="notice-page" class="page-view">
-            <div class="section-title">Official Announcements & Press</div>
+            <div class="section-title">Bulletins & Editorial</div>
 
-            <!-- Article 01 -->
-            <article class="article-card" onclick="toggleArticle(this)">
+            <!-- TYPE 1: EXPANDABLE PRESS RELEASE (Inline Open/Close) -->
+            <article class="article-card clickable" onclick="toggleInlineArticle(this)">
                 <div class="article-meta">
-                    <span>[ Press Release ]</span>
+                    <span>[ Official Announcement ]</span>
                     <span class="article-date">SEPT 13, 2026</span>
                 </div>
-                <h2 class="article-headline">Dice Roll Records Formally Launches Independent Platform</h2>
+                <h2 class="article-headline">Dice Roll Records Formally Launches Independent Hub</h2>
                 <div class="article-preview">
-                    Dice Roll Records officially opens its digital hub to serve as an independent base for creative control, analog-inspired aesthetics, and uncompromising releases.
+                    Dice Roll Records opens its main web portal as a home for artist control and retro minimalist aesthetics.
                 </div>
-                <div class="read-more-btn">Read Full Article &darr;</div>
-                <div class="article-body">
-                    <p>Built from the ground up as a zero-overhead, minimalist headquarters, Dice Roll Records provides a permanent archive for upcoming singles, full-length projects, and visual work. The platform marks a commitment to artist-first distribution and full creative autonomy without third-party intervention.</p>
+                <div class="read-more-btn">Open Bulletin &darr;</div>
+                <div class="article-body-inline">
+                    <p>Built from the ground up as a minimalist headquarters, Dice Roll Records provides a permanent archive for upcoming singles, full-length projects, and visual work. The platform marks a commitment to artist-first distribution and full creative autonomy without third-party intervention.</p>
                 </div>
             </article>
 
-            <!-- Article 02 -->
-            <article class="article-card" onclick="toggleArticle(this)">
+            <!-- TYPE 2: DEDICATED ARTICLE PAGE (Music Reviews, Features & Deep Dives) -->
+            <article class="article-card clickable" onclick="showPage('review-boys-like-you-page')">
                 <div class="article-meta">
-                    <span>[ Catalog Update ]</span>
+                    <span>[ Music Review ]</span>
                     <span class="article-date">SEPT 2026</span>
                 </div>
-                <h2 class="article-headline">Arsh Dimri Catalog Migration & Digital Distribution Live</h2>
+                <h2 class="article-headline">Single Review: Arsh Dimri — "Boys Like You"</h2>
                 <div class="article-preview">
-                    Flagship releases "Boys Like You" and "Improper Codings" are now officially cataloged and linked across major streaming platforms.
+                    An in-depth critique of the flagship single, exploring its vocal delivery, synth choices, and underlying narrative themes.
                 </div>
-                <div class="read-more-btn">Read Full Article &darr;</div>
-                <div class="article-body">
-                    <p>Listeners can now access direct stream pathways for Spotify and Apple Music directly from the artist profile section. Additional projects and archival releases are currently being prepared for the upcoming catalog expansion.</p>
-                </div>
+                <div class="read-more-btn">Read Full Review &rarr;</div>
             </article>
 
+        </div>
+
+        <!-- DEDICATED PAGE: MUSIC REVIEW -->
+        <div id="review-boys-like-you-page" class="page-view">
+            <div style="text-align: left;">
+                <span class="back-btn" onclick="showPage('notice-page', 'tab-notice')">&larr; Back to Press</span>
+            </div>
+
+            <article class="full-article-container">
+                <div class="article-meta">
+                    <span>[ Music Review ]</span>
+                    <span class="article-date">SEPT 2026</span>
+                </div>
+                <h1 class="full-article-headline">Single Review: Arsh Dimri — "Boys Like You"</h1>
+                <div class="full-article-content">
+                    <p><em>Boys Like You</em> stands out as a compelling statement from Arsh Dimri. Blending raw, introspective lyricism with precise production, the track captures a distinct mood of self-reflection and retro warmth.</p>
+                    <p>The instrumentation leans heavily into classic dynamic contrasts—letting atmospheric textures breathe before introducing driven drum patterns. Dimri’s vocal performance maintains an authentic clarity throughout, anchoring the record's emotional weight.</p>
+                    <p>As catalog release #001 for Dice Roll Records, it sets an ambitious standard for what the label aims to represent in independent music.</p>
+                </div>
+            </article>
         </div>
 
         <!-- PAGE 3: ARSH DIMRI CATALOG -->
@@ -470,7 +517,7 @@
 
     </div>
 
-    <!-- Page & Article Switcher Script -->
+    <!-- Page Switcher Script -->
     <script>
         function showPage(pageId, activeTabId) {
             // Hide all pages
@@ -480,28 +527,28 @@
             // Show selected page
             document.getElementById(pageId).classList.add('active');
 
-            // Handle tab highlighting
+            // Handle tab navigation visibility & active state
             const navTabs = document.getElementById('nav-tabs');
             const tabs = document.querySelectorAll('.nav-btn');
             tabs.forEach(tab => tab.classList.remove('active'));
 
             if (activeTabId) {
                 document.getElementById(activeTabId).classList.add('active');
-                navTabs.style.display = 'flex'; // Keep tabs visible on main sections
+                navTabs.style.display = 'flex'; // Keep top tabs visible on main Roster/Press lists
             } else {
-                navTabs.style.display = 'none'; // Hide main tabs when inside individual artist catalog
+                navTabs.style.display = 'none'; // Hide main tabs when inside dedicated views (Article or Artist profile)
             }
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function toggleArticle(element) {
+        function toggleInlineArticle(element) {
             element.classList.toggle('open');
             const btn = element.querySelector('.read-more-btn');
             if (element.classList.contains('open')) {
-                btn.innerHTML = 'Close Article &uarr;';
+                btn.innerHTML = 'Close Bulletin &uarr;';
             } else {
-                btn.innerHTML = 'Read Full Article &darr;';
+                btn.innerHTML = 'Open Bulletin &darr;';
             }
         }
     </script>
