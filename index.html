@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Roll Records</title>
     <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Importing an elegant serif font for the brand header -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #fcfcfc;
@@ -32,7 +36,7 @@
         }
 
         .container {
-            max-width: 500px;
+            max-width: 540px;
             width: 100%;
             text-align: left;
         }
@@ -42,8 +46,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 20px;
-            padding-bottom: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 18px;
             border-bottom: 2px solid var(--border-color);
             cursor: pointer;
             user-select: none;
@@ -52,22 +56,23 @@
         .brand-left {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 16px;
         }
 
         .logo-img {
-            width: 45px;
-            height: 45px;
+            width: 52px;
+            height: 52px;
             object-fit: contain;
         }
 
         .brand-name {
-            font-size: 20px;
+            font-family: 'Playfair Display', "Didot", "Bodoni MT", "Cinzel", "Times New Roman", serif;
+            font-size: 26px;
             font-weight: 900;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--text-color);
-            line-height: 1;
+            line-height: 1.1;
         }
 
         .estd {
@@ -76,6 +81,8 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: #666666;
+            align-self: flex-end;
+            margin-bottom: 3px;
         }
 
         /* Navigation Bar */
@@ -311,7 +318,7 @@
 
     <div class="container">
         
-        <!-- Top Linear Header (Logo image + Text) -->
+        <!-- Top Linear Header (Logo image + Elegant Text) -->
         <header class="site-header" onclick="showPage('roster-page', 'tab-roster')">
             <div class="brand-left">
                 <img src="logo.png" alt="Dice Roll Records Logo" class="logo-img">
