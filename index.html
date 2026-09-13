@@ -261,10 +261,43 @@
         }
     </style>
 </head>
+    /* Notice Board Styling */
+.notice-board {
+    border: 2px dashed var(--border-color, #000);
+    padding: 18px;
+    background: #ffffff;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.notice-header {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #cc0000; /* Accent color */
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.notice-date {
+    color: #666666;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.notice-content {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #111111;
+}
 <body>
 
     <div class="container">
         
+       
+     
         <!-- Dice Roll Logo -->
         <div class="logo-box" onclick="showPage('artists-page')">
             <svg class="curved-svg" viewBox="0 0 200 65">
@@ -295,6 +328,16 @@
 
         <!-- PAGE 2: ARSH DIMRI CATALOG -->
         <div id="arsh-dimri-page" class="page-view">
+            <!-- NOTICE BOARD -->
+<div class="notice-board">
+    <div class="notice-header">
+        <span>[ Notice Board ]</span>
+        <span class="notice-date">SEPT 2026</span>
+    </div>
+    <div class="notice-content">
+        Dice Roll Records is officially live. Full catalog rollout in progress—stay tuned for upcoming release announcements.
+    </div>
+</div>
             <div style="text-align: left;">
                 <span class="back-btn" onclick="showPage('artists-page')">&larr; Back to Roster</span>
             </div>
