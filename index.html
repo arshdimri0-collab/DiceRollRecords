@@ -493,7 +493,7 @@
         <div id="notice-page" class="page-view">
             <div class="section-title">Bulletins & Editorial</div>
 
-            <!-- OFFICIAL PRESS RELEASE BULLETIN -->
+            <!-- OFFICIAL PRESS RELEASE BULLETIN (TRIMMED & ORGANIC) -->
             <article class="article-card clickable" onclick="toggleInlineArticle(this)">
                 <div class="article-meta">
                     <span>[ Press Release ]</span>
@@ -506,8 +506,8 @@
                 <div class="read-more-btn">Open Bulletin &darr;</div>
                 <div class="article-body-inline">
                     <p><strong>FOR IMMEDIATE RELEASE</strong></p>
-                    <p>Dice Roll Records today officially announced its launch, opening its doors as an independent, artist-first record label designed to discover, nurture, and elevate emerging musical talent. Operating under a modern, artist-centric philosophy, Dice Roll Records arrives with a clear mission: to give high-potential musicians the resources, creative control, and global platform needed to build sustainable long-term careers.</p>
-                    <p>The label’s core framework provides comprehensive artist development, including tailored A&R guidance, digital strategy, royalty transparency, and streaming optimization while maintaining complete creative control for creators.</p>
+                    <p>Dice Roll Records is officially live as an independent, artist-led platform built to give musicians an authentic home for their craft. Created with a belief that every vision deserves a stage, the label offers a space focused purely on creative control and releasing genuine music.</p>
+                    <p>While still in its early stages, the goal is simple: to grow into a supportive community where fellow artists and musicians can put their work into the world on their own terms.</p>
                 </div>
             </article>
 
@@ -563,7 +563,7 @@
             </article>
         </div>
 
-        <!-- PAGE 3: ARSH DIMRI CATALOG (REORDERED: NEWEST FIRST) -->
+        <!-- PAGE 3: ARSH DIMRI CATALOG -->
         <div id="arsh-dimri-page" class="page-view">
             <div style="text-align: left;">
                 <span class="back-btn" onclick="showPage('roster-page', 'tab-roster')">&larr; Back to Roster</span>
@@ -613,17 +613,14 @@
             const pages = document.querySelectorAll('.page-view');
             const targetPage = document.getElementById(pageId);
 
-            // Hide active pages
             pages.forEach(page => {
                 page.classList.remove('active');
             });
 
-            // Brief delay for transition smooth effect
             setTimeout(() => {
                 targetPage.classList.add('active');
             }, 50);
 
-            // Handle tab navigation visibility & active state
             const navTabs = document.getElementById('nav-tabs');
             const tabs = document.querySelectorAll('.nav-btn');
             tabs.forEach(tab => tab.classList.remove('active'));
