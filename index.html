@@ -90,19 +90,19 @@
             margin-bottom: 3px;
         }
 
-        /* Navigation Bar */
+        /* Navigation Bar (Now with 3 main sections) */
         .nav-tabs {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             margin-bottom: 24px;
         }
 
         .nav-btn {
             flex: 1;
-            padding: 10px 14px;
-            font-size: 12px;
+            padding: 10px 8px;
+            font-size: 11px;
             font-weight: 800;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             background: #ffffff;
             color: var(--text-color);
@@ -146,26 +146,6 @@
             margin-bottom: 20px;
             border-bottom: 1px solid #ddd;
             padding-bottom: 6px;
-        }
-
-        .sub-section-title {
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--accent-red);
-            margin-top: 10px;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .sub-section-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: #e0e0e0;
         }
 
         /* Base Card Styling */
@@ -297,7 +277,7 @@
             margin-bottom: 14px;
         }
 
-        /* Editorial Images & Captions */
+        /* Clean Editorial Images (No Captions) */
         .article-image-figure {
             margin: 24px 0;
             text-align: center;
@@ -310,15 +290,6 @@
             border: 2px solid var(--border-color);
             background-color: #f0f0f0;
             display: block;
-        }
-
-        .image-caption {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            color: #666666;
-            margin-top: 8px;
-            text-transform: uppercase;
         }
 
         /* Artist Card */
@@ -492,10 +463,11 @@
             <div class="estd">ESTD. 2026</div>
         </header>
 
-        <!-- Navigation Tabs -->
+        <!-- Navigation Tabs: 3 Separate Sections -->
         <nav class="nav-tabs" id="nav-tabs">
             <button class="nav-btn active" id="tab-roster" onclick="showPage('roster-page', 'tab-roster')">Roster</button>
-            <button class="nav-btn" id="tab-notice" onclick="showPage('notice-page', 'tab-notice')">Press & Board</button>
+            <button class="nav-btn" id="tab-bulletins" onclick="showPage('bulletins-page', 'tab-bulletins')">Bulletins</button>
+            <button class="nav-btn" id="tab-editorial" onclick="showPage('editorial-page', 'tab-editorial')">Editorial</button>
         </nav>
 
         <!-- TAB 1: ROSTER -->
@@ -509,12 +481,9 @@
             </div>
         </div>
 
-        <!-- TAB 2: PRESS & NOTICE BOARD -->
-        <div id="notice-page" class="page-view">
-            <div class="section-title">Press & Board</div>
-
-            <!-- SECTION 1: BULLETINS -->
-            <div class="sub-section-title">Official Bulletins</div>
+        <!-- TAB 2: PRESS BULLETINS -->
+        <div id="bulletins-page" class="page-view">
+            <div class="section-title">Official Bulletins</div>
 
             <article class="article-card clickable" onclick="toggleInlineArticle(this)">
                 <div class="article-meta">
@@ -532,9 +501,11 @@
                     <p>While still in its early stages, the goal is simple: to grow into a supportive community where fellow artists and musicians can put their work into the world on their own terms.</p>
                 </div>
             </article>
+        </div>
 
-            <!-- SECTION 2: EDITORIALS & FEATURES -->
-            <div class="sub-section-title" style="margin-top: 32px;">Editorial & Letters</div>
+        <!-- TAB 3: EDITORIAL & LETTERS -->
+        <div id="editorial-page" class="page-view">
+            <div class="section-title">Editorial & Letters</div>
 
             <!-- ARTICLE 1: VERY SPONTANEOUS -->
             <article class="article-card clickable" onclick="showPage('article-very-spontaneous-page')">
@@ -561,13 +532,12 @@
                 </div>
                 <div class="read-more-btn">Read Full Article &rarr;</div>
             </article>
-
         </div>
 
         <!-- DEDICATED PAGE: "VERY SPONTANEOUS" -->
         <div id="article-very-spontaneous-page" class="page-view">
             <div style="text-align: left;">
-                <span class="back-btn" onclick="showPage('notice-page', 'tab-notice')">&larr; Back to Press</span>
+                <span class="back-btn" onclick="showPage('editorial-page', 'tab-editorial')">&larr; Back to Editorial</span>
             </div>
 
             <article class="full-article-container">
@@ -581,28 +551,25 @@
                 <div class="full-article-content">
                     <p>All I wanna say is that, IMPROPER CODINGS was not something that was meant to be. It had no head,no tail, popped out of a random instagram post. So I created a new id of mine to focus on music projects called "twinkonaguitar". I just randomly posted a pic with that windows player UI snapchat filter captioned, "improper codings coming soon". Nothing like that ever existed in reality.</p>
                     
-                    <!-- EDITORIAL IMAGE 1 -->
+                    <!-- EDITORIAL IMAGE 1 (NO CAPTION) -->
                     <figure class="article-image-figure">
-                        <img src="A2I1.jpg" alt="Improper Codings Concept & Origin" class="editorial-img">
-                        <figcaption class="image-caption">Fig 1. Initial post concept — @twinkonaguitar</figcaption>
+                        <img src="A2I1.jpg" alt="Improper Codings Concept" class="editorial-img">
                     </figure>
 
                     <p>I was wondering what to do now? I had nothing that resonates with this vision, no nothing. As far as I remember next day I just randomly start throwing out random song titles to make a tracklist. I got to my regular place of recording next morning, picked up my guitar, strummed some chords tryna come up with a melody. It was nothing different, I'm pretty used to doing this stuff but the actual difference is that, this time all of these tracks are going to end up on streaming. A fairly new experience.</p>
                     
                     <p>Recordings started on end of March, the original idea was to record and put each track on Soundcloud first before officially releasing on all streaming services but as we all know that idea was shelfed because it was boring. The original mixtape was planned to be 16 tracks long but I didn’t like working that long it was getting hell boring and I needed to get it done.</p>
                     
-                    <!-- EDITORIAL IMAGE 2 -->
+                    <!-- EDITORIAL IMAGE 2 (NO CAPTION) -->
                     <figure class="article-image-figure">
                         <img src="A2I2.jpg" alt="Studio Session Tracking" class="editorial-img">
-                        <figcaption class="image-caption">Fig 2. Live tracking session & acoustic setups</figcaption>
                     </figure>
 
                     <p>The main tracks were all recorded in a single track with instruments and vocals being recorded simultaneously. They were only supposed to be demos but I kinda liked the grit these recordings had in them so I kept them as it is, because I fear the rawnesss and emotions in these demos cannot be replicated and I loved it . The whole mixtape is in the order of the first recorded tracks being first and the last being the last. So the first track to be ever recorded was Wise Words(Intro), it was recorded way back in 2024, but I liked the essence of it so I decided to break off this mixtape with this track. The outro was recorded somewhat at the end but the last track to be recorded was Chasin' Sunset.</p>
                     
-                    <!-- EDITORIAL IMAGE 3 -->
+                    <!-- EDITORIAL IMAGE 3 (NO CAPTION) -->
                     <figure class="article-image-figure">
-                        <img src="A2I3.jpg" alt="Visual Archives & Future Era" class="editorial-img">
-                        <figcaption class="image-caption">Fig 3. Tape archives & upcoming release drafts</figcaption>
+                        <img src="A2I3.jpg" alt="Tape Archives" class="editorial-img">
                     </figure>
 
                     <p>I really liked this mixtape it has a lot of feelings in it and something to say. As minimal it sounds, as big image it portrays to the audience through simplicity and bad quality. I would keep this style for a while and future releases and would experiment more. This year was crazy but not still crazy enough because we still have to take one last bite of the apple. This year might be getting nearer to a closure but my musical journey has just begin and there is hell more to come next year. I just cant wait to unravel my bag and spread my art in the world, its very very beautiful and whimsical.</p>
@@ -615,7 +582,7 @@
         <!-- DEDICATED PAGE: "ITS NOW ALL TANGIBLE" -->
         <div id="article-its-now-all-tangible-page" class="page-view">
             <div style="text-align: left;">
-                <span class="back-btn" onclick="showPage('notice-page', 'tab-notice')">&larr; Back to Press</span>
+                <span class="back-btn" onclick="showPage('editorial-page', 'tab-editorial')">&larr; Back to Editorial</span>
             </div>
 
             <article class="full-article-container">
@@ -630,10 +597,9 @@
                     <p>Hi!!!!!!!!!!!<br>
                     Arsh here, I'm so glad you all came here. Its been a month I've been preparing for the launch of this website and my independent record label.</p>
                     
-                    <!-- EDITORIAL IMAGE -->
+                    <!-- EDITORIAL IMAGE (NO CAPTION) -->
                     <figure class="article-image-figure">
                         <img src="A1I1.jpg" alt="Dice Roll Records Launch" class="editorial-img">
-                        <figcaption class="image-caption">Fig 1. Dice Roll Records — Catalogue & Archive</figcaption>
                     </figure>
 
                     <p>This record label is a vision of mine where us artist gets to explore ourselves through music, because every vision deserves a stage. Every release of mine was, is,will be released through this label.</p>
@@ -649,7 +615,7 @@
             </article>
         </div>
 
-        <!-- PAGE 3: ARSH DIMRI CATALOG -->
+        <!-- PAGE 4: ARSH DIMRI CATALOG -->
         <div id="arsh-dimri-page" class="page-view">
             <div style="text-align: left;">
                 <span class="back-btn" onclick="showPage('roster-page', 'tab-roster')">&larr; Back to Roster</span>
@@ -734,3 +700,4 @@
 
 </body>
 </html>
+
