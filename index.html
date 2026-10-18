@@ -148,6 +148,26 @@
             padding-bottom: 6px;
         }
 
+        .sub-section-title {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent-red);
+            margin-top: 10px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sub-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
         /* Base Card Styling */
         .article-card {
             border: 2px solid var(--border-color);
@@ -279,7 +299,7 @@
 
         /* Editorial Images & Captions */
         .article-image-figure {
-            margin: 20px 0;
+            margin: 24px 0;
             text-align: center;
         }
 
@@ -491,9 +511,11 @@
 
         <!-- TAB 2: PRESS & NOTICE BOARD -->
         <div id="notice-page" class="page-view">
-            <div class="section-title">Bulletins & Editorial</div>
+            <div class="section-title">Press & Board</div>
 
-            <!-- OFFICIAL PRESS RELEASE BULLETIN (TRIMMED & ORGANIC) -->
+            <!-- SECTION 1: BULLETINS -->
+            <div class="sub-section-title">Official Bulletins</div>
+
             <article class="article-card clickable" onclick="toggleInlineArticle(this)">
                 <div class="article-meta">
                     <span>[ Press Release ]</span>
@@ -511,7 +533,23 @@
                 </div>
             </article>
 
-            <!-- FOUNDER ARTICLE CARD -->
+            <!-- SECTION 2: EDITORIALS & FEATURES -->
+            <div class="sub-section-title" style="margin-top: 32px;">Editorial & Letters</div>
+
+            <!-- ARTICLE 1: VERY SPONTANEOUS -->
+            <article class="article-card clickable" onclick="showPage('article-very-spontaneous-page')">
+                <div class="article-meta">
+                    <span>[ Behind The Tape ]</span>
+                    <span class="article-date">OCT 19, 2026</span>
+                </div>
+                <h2 class="article-headline">VERY SPONTANEOUS</h2>
+                <div class="article-preview">
+                    Arsh, shares BTS of making of their first mixtape and reveals future plans.
+                </div>
+                <div class="read-more-btn">Read Feature &rarr;</div>
+            </article>
+
+            <!-- ARTICLE 2: FOUNDER LETTER -->
             <article class="article-card clickable" onclick="showPage('article-its-now-all-tangible-page')">
                 <div class="article-meta">
                     <span>[ Founder Letter ]</span>
@@ -524,6 +562,54 @@
                 <div class="read-more-btn">Read Full Article &rarr;</div>
             </article>
 
+        </div>
+
+        <!-- DEDICATED PAGE: "VERY SPONTANEOUS" -->
+        <div id="article-very-spontaneous-page" class="page-view">
+            <div style="text-align: left;">
+                <span class="back-btn" onclick="showPage('notice-page', 'tab-notice')">&larr; Back to Press</span>
+            </div>
+
+            <article class="full-article-container">
+                <div class="article-meta">
+                    <span>[ Behind The Tape ]</span>
+                    <span class="article-date">OCT 19, 2026</span>
+                </div>
+                <h1 class="full-article-headline">VERY SPONTANEOUS</h1>
+                <div class="full-article-sub">Arsh, shares BTS of making of their first mixtape and reveals future plans</div>
+                
+                <div class="full-article-content">
+                    <p>All I wanna say is that, IMPROPER CODINGS was not something that was meant to be. It had no head,no tail, popped out of a random instagram post. So I created a new id of mine to focus on music projects called "twinkonaguitar". I just randomly posted a pic with that windows player UI snapchat filter captioned, "improper codings coming soon". Nothing like that ever existed in reality.</p>
+                    
+                    <!-- EDITORIAL IMAGE 1 -->
+                    <figure class="article-image-figure">
+                        <img src="A2I1.jpg" alt="Improper Codings Concept & Origin" class="editorial-img">
+                        <figcaption class="image-caption">Fig 1. Initial post concept — @twinkonaguitar</figcaption>
+                    </figure>
+
+                    <p>I was wondering what to do now? I had nothing that resonates with this vision, no nothing. As far as I remember next day I just randomly start throwing out random song titles to make a tracklist. I got to my regular place of recording next morning, picked up my guitar, strummed some chords tryna come up with a melody. It was nothing different, I'm pretty used to doing this stuff but the actual difference is that, this time all of these tracks are going to end up on streaming. A fairly new experience.</p>
+                    
+                    <p>Recordings started on end of March, the original idea was to record and put each track on Soundcloud first before officially releasing on all streaming services but as we all know that idea was shelfed because it was boring. The original mixtape was planned to be 16 tracks long but I didn’t like working that long it was getting hell boring and I needed to get it done.</p>
+                    
+                    <!-- EDITORIAL IMAGE 2 -->
+                    <figure class="article-image-figure">
+                        <img src="A2I2.jpg" alt="Studio Session Tracking" class="editorial-img">
+                        <figcaption class="image-caption">Fig 2. Live tracking session & acoustic setups</figcaption>
+                    </figure>
+
+                    <p>The main tracks were all recorded in a single track with instruments and vocals being recorded simultaneously. They were only supposed to be demos but I kinda liked the grit these recordings had in them so I kept them as it is, because I fear the rawnesss and emotions in these demos cannot be replicated and I loved it . The whole mixtape is in the order of the first recorded tracks being first and the last being the last. So the first track to be ever recorded was Wise Words(Intro), it was recorded way back in 2024, but I liked the essence of it so I decided to break off this mixtape with this track. The outro was recorded somewhat at the end but the last track to be recorded was Chasin' Sunset.</p>
+                    
+                    <!-- EDITORIAL IMAGE 3 -->
+                    <figure class="article-image-figure">
+                        <img src="A2I3.jpg" alt="Visual Archives & Future Era" class="editorial-img">
+                        <figcaption class="image-caption">Fig 3. Tape archives & upcoming release drafts</figcaption>
+                    </figure>
+
+                    <p>I really liked this mixtape it has a lot of feelings in it and something to say. As minimal it sounds, as big image it portrays to the audience through simplicity and bad quality. I would keep this style for a while and future releases and would experiment more. This year was crazy but not still crazy enough because we still have to take one last bite of the apple. This year might be getting nearer to a closure but my musical journey has just begin and there is hell more to come next year. I just cant wait to unravel my bag and spread my art in the world, its very very beautiful and whimsical.</p>
+                    
+                    <p><strong>LOVE YALL&lt;3<br>XX</strong></p>
+                </div>
+            </article>
         </div>
 
         <!-- DEDICATED PAGE: "ITS NOW ALL TANGIBLE" -->
